@@ -1,0 +1,32 @@
+﻿<Window x:Class="MyCourseWork2.Administrator"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyCourseWork2"
+        mc:Ignorable="d"
+        Title="Administrator" Height="450" Width="800">
+    <Grid>
+        <TabControl HorizontalAlignment="Left" Height="420" VerticalAlignment="Top" Width="794" Margin="0,0,-0.4,0">
+            <TabItem Header="Добавить пациента" Margin="-2,-2,-89.2,-0.2">
+                <Grid>
+                    <Button x:Name="Patient" Content="Добавить&#xD;&#xA;пациента" HorizontalAlignment="Left" VerticalAlignment="Top" Width="56" Click="InsertPatient"/>
+                    <DataGrid HorizontalAlignment="Left" Height="392" Margin="56,0,0,0" VerticalAlignment="Top" Width="637"/>
+                    <Button Content="Список больных" HorizontalAlignment="Left" Margin="693,0,0,0" VerticalAlignment="Top" Width="95" RenderTransformOrigin="5.027,1.844" Height="24"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Уволить врача" Margin="88.8,-2,-171.8,-0.2">
+                <Grid>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Изменить диагноз пациента" Margin="171.6,-4,-263.6,2">
+                <Grid>
+
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>

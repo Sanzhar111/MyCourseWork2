@@ -1,0 +1,99 @@
+﻿<Window x:Class="MyCourseWork2.Users"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyCourseWork2"
+        mc:Ignorable="d"
+        Title="Users" Height="450" Width="1291.405">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="158*"/>
+            <ColumnDefinition Width="568*"/>
+            <ColumnDefinition Width="559*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Margin="0,0,-0.2,0" Grid.ColumnSpan="3">
+            <TabControl Height="410" Margin="0,10,-0.4,0" VerticalAlignment="Top"  >
+                <TabItem Header="Адрес,дата заболевания,&#xD;&#xA;диагноз заболевания лечащегося">
+                    <Grid>
+
+                        <Grid.ColumnDefinitions>
+
+                            <ColumnDefinition Width="332*"/>
+                            <ColumnDefinition Width="49*"/>
+                            <ColumnDefinition Width="898*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox x:Name="idOfUser" HorizontalAlignment="Left" Height="22" Margin="-6,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216"/>
+                        <Label Content="Введите порядковый номер больного:" HorizontalAlignment="Left" Margin="-8,0,0,0" VerticalAlignment="Top" Height="24" Width="224"/>
+
+                        <Button x:Name="Vvod" Content="Ввод" VerticalAlignment="Top" Height="19" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="51" Margin="215,27,0,0" Click="ShowDoctorForPatient"/>
+                        <Button x:Name="GetPatient" Content="Получить список всех больных" HorizontalAlignment="Left" VerticalAlignment="Top" Width="188" Height="40" Click="GetPatient_Click" Margin="710.2,0,0,0" Grid.Column="2"/>
+                        <DataGrid x:Name="Grid" Margin="271,0,188.2,-0.4" Grid.ColumnSpan="3"/>
+                    </Grid>
+
+                </TabItem>
+
+                <TabItem Header="ФИО лечащего врача данного больного">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="128*"/>
+                            <ColumnDefinition Width="849*"/>
+                            <ColumnDefinition Width="302*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="GetPatient_Copy" Content="Получить список всех больных" HorizontalAlignment="Left" VerticalAlignment="Top" Width="175" Height="40" Click="GetPatient_Click" Margin="127.2,0,0,0" Grid.Column="2"/>
+                        <DataGrid x:Name="Grid1" Margin="148,0,175.2,0.4" Grid.ColumnSpan="2" Grid.Column="1"/>
+                        <Label Content="Введите порядковый номер больного:" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="225"/>
+                        <Button x:Name="Vvod2" Content="Ввод" Grid.Column="1" HorizontalAlignment="Left" Margin="93,30,0,0" VerticalAlignment="Top" Width="50" Click="ShowDoctors"/>
+                        <TextBox x:Name="idOfUser2" HorizontalAlignment="Left" Height="23" Margin="0,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Grid.ColumnSpan="2"/>
+
+                    </Grid>
+                </TabItem>
+
+                <TabItem Header="Номер кабинета,дни и часы приема врача">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="812*"/>
+                            <ColumnDefinition Width="467*"/>
+                        </Grid.ColumnDefinitions>
+                        <DataGrid x:Name="Grid2" HorizontalAlignment="Left" Height="366" Margin="283,0,0,0" VerticalAlignment="Top" Width="821" Grid.ColumnSpan="2"/>
+                        <Button x:Name="GetPatient_Copy1" Content="Получить список всех врачей" HorizontalAlignment="Left" VerticalAlignment="Top" Width="175" Height="40" Click="GetDoctors_Click" Margin="292,0,0,0" Grid.Column="1"/>
+                        <Button x:Name="ShowTime" Content="Ввод" HorizontalAlignment="Left" Margin="228,34,0,0" VerticalAlignment="Top" Width="50" Click="NumberAndDaysDoctors" Height="19"/>
+                        <Label Content="Введите порядковый номер врача:" HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.687,-0.359" Width="223"/>
+                        <TextBox x:Name="NumOfDoctor" HorizontalAlignment="Left" Height="23" Margin="7,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216"/>
+
+                    </Grid>
+                </TabItem>
+
+                <TabItem Header="Больные,находящие на приеме у врача">
+                    <Grid>
+                        <DataGrid x:Name="Grid3" HorizontalAlignment="Left" Height="366" Margin="276,0,0,0" VerticalAlignment="Top" Width="828"/>
+                        <Button Content="Получить список всех врачей:" HorizontalAlignment="Left" Margin="1104,0,0,0" VerticalAlignment="Top" Width="175" RenderTransformOrigin="-0.064,-2.198" Height="40" Click="GetDoctors_Click"/>
+                        <Button x:Name="ShowPatients" Content="Ввод" HorizontalAlignment="Left" Margin="218,30,0,0" VerticalAlignment="Top" Width="58" Click="ShowPatientsWithDoc"/>
+                        <Label Content="Введите порядковый номер врача:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-1.583,3.406" Width="215"/>
+                        <TextBox x:Name="NumOfDoctor4" HorizontalAlignment="Left" Height="23" Margin="0,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="213"/>
+
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Симптомы заболевания и рекомендуемое лекарство" Margin="1.4,-2,-60.6,0" RenderTransformOrigin="0.504,0.505">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="838*"/>
+                            <ColumnDefinition Width="441*"/>
+                        </Grid.ColumnDefinitions>
+                        <DataGrid x:Name="Grid4" HorizontalAlignment="Left" Height="371" Margin="266,-5,0,0" VerticalAlignment="Top" Width="836" Grid.ColumnSpan="2"/>
+                        <Button Content="Получить список заболеваний" HorizontalAlignment="Left" Margin="263.6,3,0,0" VerticalAlignment="Top" Width="177" Height="41" RenderTransformOrigin="0.483,1.042" Grid.Column="1" Click="GetIllness_Click"/>
+                        <Button x:Name="ShowSymptom" Content="Ввод" HorizontalAlignment="Left" Margin="219,25,0,0" VerticalAlignment="Top" Width="47" Click="ShowSymptoms"/>
+                        <TextBox x:Name="Illness_" HorizontalAlignment="Left" Height="23" Margin="0,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="214" RenderTransformOrigin="0.855,3.078"/>
+                        <Label Content="Введите порядковый номер заболевания:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="248" RenderTransformOrigin="-1.286,-2.047"/>
+
+                    </Grid>
+
+                </TabItem>
+                <Border BorderBrush="Black" BorderThickness="1" Height="100" Width="100"/>
+            </TabControl>
+
+        </Grid>
+
+    </Grid>
+</Window>
