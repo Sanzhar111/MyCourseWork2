@@ -102,14 +102,9 @@
       <DependentUpon>Administrator.xaml</DependentUpon>
     </Compile>
     <Compile Include="DB.cs" />
-    <Compile Include="RegistrationPatient.xaml.cs">
-      <DependentUpon>RegistrationPatient.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="RegistrationPatient.xaml.cs" />
     <Compile Include="Registrator.xaml.cs">
       <DependentUpon>Registrator.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="RegistratorForAdministrator.xaml.cs">
-      <DependentUpon>RegistratorForAdministrator.xaml</DependentUpon>
     </Compile>
     <Compile Include="Users.xaml.cs">
       <DependentUpon>Users.xaml</DependentUpon>
@@ -131,14 +126,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="RegistrationPatient.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Registrator.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="RegistratorForAdministrator.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -5,14 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyCourseWork2"
         mc:Ignorable="d"
-        Title="Registrator" Height="450" Width="800">
+        Title="Registrator" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <Label Content="Авторизация" HorizontalAlignment="Center" Margin="277,56,271.6,0" VerticalAlignment="Top" Width="245" FontSize="20" FlowDirection="RightToLeft" HorizontalContentAlignment="Center" Foreground="Black" Grid.IsSharedSizeScope="True"/>
         <Label Content="Логин" HorizontalAlignment="Left" Margin="227,125,0,0" VerticalAlignment="Top" Width="74"/>
         <Label Content="Пароль" HorizontalAlignment="Left" Margin="227,176,0,0" VerticalAlignment="Top" Width="74"/>
-        <TextBox x:Name="Password" HorizontalAlignment="Left" Height="23" Margin="382,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Password_TextChanged"/>
-        <TextBox x:Name="Login" HorizontalAlignment="Left" Height="23" Margin="382,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Login_TextChanged"/>
-        <Button x:Name="Registration" Content="Ввод" HorizontalAlignment="Left" Margin="371,227,0,0" VerticalAlignment="Top" Width="75" Click="Registrationn"/>
-
+        <TextBox x:Name="Password" HorizontalAlignment="Left" Height="23" Margin="382,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="12345"/>
+        <TextBox x:Name="Login" HorizontalAlignment="Left" Height="23" Margin="382,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="root"/>
+        <Button x:Name="Registration" Content="Ввод" HorizontalAlignment="Left" Margin="371,227,0,0" VerticalAlignment="Top" Width="75" Click="Registration_Click"/>
     </Grid>
 </Window>

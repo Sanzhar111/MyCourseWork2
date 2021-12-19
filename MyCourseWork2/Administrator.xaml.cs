@@ -1,22 +1,18 @@
 ﻿using System.Windows;
-
 namespace MyCourseWork2
 {
-    /// <summary>
-    /// Логика взаимодействия для Administrator.xaml
-    /// </summary>
     public partial class Administrator : Window
     {
-        public Administrator()
+        DB db = null;
+        public Administrator(DB db)
         {
+            this.db = db;
             InitializeComponent();
         }
-
         private void InsertPatient(object sender, RoutedEventArgs e)
         {
-            RegistrationPatient registerForm = new RegistrationPatient();
+            RegistrationPatient registerForm = new RegistrationPatient(db);
             registerForm.Show();
-            
         }
     }
 }

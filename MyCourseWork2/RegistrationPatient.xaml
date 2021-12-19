@@ -7,24 +7,29 @@
         mc:Ignorable="d"
         Title="RegistrationPatient" Height="450" Width="491.824">
     <Grid HorizontalAlignment="Left" Width="482">
-
-        <Label Content="Имя:" HorizontalAlignment="Left" Margin="24.8,24,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <TextBox x:Name="Name" HorizontalAlignment="Left" Height="23" Margin="25,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Фамилия:" HorizontalAlignment="Left" Margin="25,89,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="Surname" HorizontalAlignment="Left" Height="23" Margin="25,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Очество" HorizontalAlignment="Left" Margin="25,148,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="LastName" HorizontalAlignment="Left" Height="23" Margin="25,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Адрес" HorizontalAlignment="Left" Margin="25,209,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="Address" HorizontalAlignment="Left" Height="23" Margin="25,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Диагноз:" HorizontalAlignment="Left" Margin="330,24,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="Diagnoz" HorizontalAlignment="Left" Height="23" Margin="330,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Дата поступления:" HorizontalAlignment="Left" Margin="331,89,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="Date" HorizontalAlignment="Left" Height="23" Margin="330,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Врач:" HorizontalAlignment="Left" Margin="331,147,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="Doctor" HorizontalAlignment="Left" Height="23" Margin="330,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <DataGrid x:Name="Grid5" HorizontalAlignment="Left" Height="239" Margin="160,24,0,0" VerticalAlignment="Top" Width="158"/>
-        <Button Content="Врачи" HorizontalAlignment="Left" Margin="160,263,0,0" VerticalAlignment="Top" Width="79"/>
-        <Button Content="Заболевания" HorizontalAlignment="Left" Margin="239,263,0,0" VerticalAlignment="Top" Width="79"/>
-        <Button x:Name="Insert" Content="Ввод" HorizontalAlignment="Left" Margin="330,215,0,0" VerticalAlignment="Top" Width="120" Height="37" Click="InsertInfo"/>
+        <Label Content="Имя:" HorizontalAlignment="Left" Margin="25,-2,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Name" Height="23" Margin="25,30,25,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Label Content="Фамилия:" HorizontalAlignment="Left" Margin="25,60,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Surname" Height="23" Margin="25,86,25,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Label Content="Очество" HorizontalAlignment="Left" Margin="25,113,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="LastName" Height="23" Margin="25,143,25,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.778"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Label Content="Адрес" HorizontalAlignment="Left" Margin="25,168,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Address" Height="23" Margin="25,196,25,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Label Content="Диагноз:" HorizontalAlignment="Left" Margin="25,227,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="Diagnoz" Height="23" Margin="25,258,25,0"  VerticalAlignment="Top"/>
+        <Label Content="Дата поступления:" HorizontalAlignment="Left" Margin="26,285,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Date" Height="23" Margin="25,316,25,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Label Content="Врач:" HorizontalAlignment="Left" Margin="26,343,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="Doctor" Height="23" Margin="25,375,150,0" VerticalAlignment="Top"/>
+        <Button x:Name="Insert" Content="Ввод" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="120" Height="37" Click="InsertInfo"/>
     </Grid>
 </Window>

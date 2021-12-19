@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyCourseWork2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid Focusable="True">
         <Button x:Name="Registrator" Content="Registrator" HorizontalAlignment="Left" VerticalAlignment="Top" Width="195" Margin="293,56,0,0" Click="Registrator_Click" Height="80"/>
         <Button Content="Administrator" HorizontalAlignment="Left" VerticalAlignment="Top" Width="195" Margin="293,232,0,0" Height="80" Click="Administrator_Click"/>
