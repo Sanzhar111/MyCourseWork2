@@ -1,30 +1,46 @@
 ﻿using MySqlConnector;
+using System;
+using System.Data;
+using System.Windows;
 
 namespace MyCourseWork2
 {
-    class DB
+    public class DB
     {
-        // Connection String
-      //  string connString = "Server=localhost;Database=database;port=3306;User Id=root;password=12345";
-      MySqlConnection connection = new MySqlConnection("Server=localhost;port=3306;username=root;password=12345;Database=import3");
-        public void closeConnection()
+        public MySqlConnection connection { get; private set; }
+        public void openConnection(string user="root", string pass="12345")
         {
-            if (connection.State == System.Data.ConnectionState.Closed)
+            connection = new MySqlConnection($"Server=localhost;port=3306;username={user};password={pass};Database=hospital");
+            connection.Open();
+        }
+        public MySqlDataReader REQ(string req, bool isReturn = true)
+        {
+            try
             {
-                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(req, connection);
+                cmd.ExecuteNonQuery();
+                if (!isReturn) return null;
+                return cmd.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex.Message);
+                return null;
             }
         }
-        public void openConnection()
+        public DataView GetTable(string Req, string TableName = "table")
         {
-            if (connection.State == System.Data.ConnectionState.Open)
-            {
-                connection.Close();
-            }
+            MySqlCommand command = new MySqlCommand(Req, connection);
+            MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+            DataTable data = new DataTable(TableName);
+            adapter.Fill(data);
+            return data.DefaultView;
         }
-        public MySqlConnection getConnection()
+        public bool chekValid()
         {
-            return connection;
+            if (connection == null) return false;
+            if (connection.State != ConnectionState.Open) return false;
+            return true;
         }
-
     }
 }
